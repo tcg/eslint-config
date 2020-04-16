@@ -41,7 +41,18 @@ module.exports = {
     // those custom commands, because it's a devDependency. Per the docs,
     // this will allow Dev Dep imports in files matching the globs:
     // See: https://github.com/benmosher/eslint-plugin-import/blob/v2.17.3/docs/rules/no-extraneous-dependencies.md#options
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.js", "**/*.spec.js"] }]
-  }
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.js", "**/*.spec.js"] }],
 
+    // Configure our Prettier settings overrides:
+    // https://prettier.io/docs/en/options.html
+    "prettier/prettier": ["error", {
+      printWidth: 80,
+      trailingComma: "all",
+      tabWidth: 2,
+      semi: false,
+      arrowParens: "always",
+      singleQuote: true,
+      jsxSingleQuote: false
+    }]
+  }
 };
